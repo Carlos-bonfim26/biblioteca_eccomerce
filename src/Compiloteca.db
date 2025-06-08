@@ -1,0 +1,29 @@
+create database system_library;
+
+use system_library;
+
+create table books(
+Id_Book int auto_increment primary key,
+Tittle_book varchar(100),
+Author_book varchar(100),
+Value_Book decimal(10,2),
+Unit_book int
+);
+
+create table clients(
+Id_client int auto_increment primary key,
+Name_Client varchar(100),
+Email_Client varchar(100),
+Phone_client varchar(15),
+Cep_Client char(8),
+Home_Client varchar(10),
+Password_Client varchar(100)
+);
+
+create table sale( 
+Value_sale decimal(10,2),
+BookID int,
+ClientID int,
+foreign key(BookID) references books(Id_Book),
+foreign key(ClientID) references clients(Id_client)
+);
