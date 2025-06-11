@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.container-signUp {
+  align-items: center;
+  width: 100%;
+
+  min-height: 100vh;
+  background-color: #5e2208;
+  display: flex;
+}
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+
+  border-bottom-right-radius: 50%;
+  min-height: 100vh;
+  padding: 0.8rem;
+  background-color: #461b0b;
+}
+.container-form h1 {
+  color: #f7f3e3;
+  font-size: 2.7rem;
+}
+.container-form p {
+  color: #f7f3e3;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+}
+.container-form a {
+  color: #ff9505;
+  text-decoration: none;
+  font-weight: 600;
+}
+.container-form form {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.container-form form input {
+  height: 2.2rem;
+  width: 22rem;
+  outline: none;
+  border-radius: 0.2rem;
+  border: none;
+  color: #010c13;
+  background-color: #f7f3e3;
+  padding: 0.2rem;
+}
+.container-form form input::placeholder {
+  color: #461b0b;
+  font-weight: 600;
+}
+.container-form form input[type="submit"] {
+  background-color: #ff9505;
+  color: #f7f3e3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.container-form form input[type="submit"]:hover {
+  background-color: #ffb651;
+}
+.form-house {
+  display: flex;
+  gap: 0.5rem;
+}
+.form-house #cep {
+  width: 12rem;
+}
+.form-house #nCasa {
+  width: 9.5rem;
+}
+.image-form {
+  min-height: 100vh;
+  display: flex;
+  align-items: end;
+}
+.image-form img {
+  width: 25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .container-form h1 {
+    font-size: 2rem;
+  }
+  .container-form p {
+    font-size: 1rem;
+  }
+  .container-form form input{
+    height: 2rem;
+    width: 16rem;
+  }
+  .form-house #cep{
+    width: 9.5rem;
+  }
+  .form-house #nCasa{
+    width: 6rem;
+  }
+  .image-form img {
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 680px){
+.container-signUp{
+    flex-direction: column-reverse;
+}
+.container-form{
+    width: 100%;
+    min-height: fit-content;
+    justify-content: start;
+    border-bottom-right-radius: 0%;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+}
+.image-form {
+    min-height: 15vh;
+}
+.image-form img{
+    width: 16rem;
+}
+}
