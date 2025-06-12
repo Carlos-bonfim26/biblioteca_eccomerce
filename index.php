@@ -1,3 +1,14 @@
+<?php 
+require_once "src/conexao.php";
+
+session_start();
+
+if(!isset($_SESSION['Usuario'])){
+    header('Location: pages/cadastro.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +22,7 @@
 </head>
 <body>
     
-
+<h1>Olá mundo</h1>
    
 </body>
 </html>

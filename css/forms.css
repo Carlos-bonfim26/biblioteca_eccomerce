@@ -90,7 +90,11 @@
   width: 25rem;
   margin-bottom: 2rem;
 }
-
+.container-form span{
+  color: #f7f3e3;
+  font-size: 1rem;
+  font-weight: 600;
+}
 @media (max-width: 800px) {
   .container-form h1 {
     font-size: 2rem;
@@ -117,18 +121,31 @@
 .container-signUp{
     flex-direction: column-reverse;
 }
+.container-form h1 {
+    font-size: 1.8rem;
+  }
 .container-form{
     width: 100%;
-    min-height: fit-content;
+    min-height: 75vh;
+    padding:  1.5rem 0.5rem;
     justify-content: start;
     border-bottom-right-radius: 0%;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
 }
 .image-form {
-    min-height: 15vh;
+    min-height: 25vh;
 }
 .image-form img{
     width: 16rem;
+}
+}
+@media (max-width: 400px){
+  .container-form{
+    min-height: 65vh;
+    justify-content: center;
+  }
+  .image-form {
+    min-height: 35vh;
 }
 }
