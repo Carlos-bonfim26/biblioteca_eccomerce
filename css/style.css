@@ -1,0 +1,168 @@
+/* gerais */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7f3e3;
+}
+/* navbar */
+.container-fluid .navbar-brand img {
+  width: 15rem;
+}
+.nav-link {
+  color: #5e2208;
+  position: relative;
+  transition: 0.1s ease-in-out;
+}
+.nav-link:focus {
+  color: #5e2208;
+  font-weight: 600;
+}
+.nav-item:hover .nav-link {
+  color: #5e2208;
+  font-weight: 500;
+}
+.nav-link.active {
+  font-weight: 500;
+}
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+/* página de contatos */
+.main-contatos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 0 1.5rem 0;
+}
+.container-dev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container-dev h2 {
+  color: #5e2208;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
+.container-dev span {
+  color: #1e1e1e;
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.container-dev .image-dev {
+  width: 20rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0.1rem 0.3rem 0.7rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+.container-dev .image-dev img {
+  width: 100%;
+}
+.container-dev .container-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.container-dev .container-icons a {
+  color: #5e2208;
+  font-size: 2rem;
+}
+.container-forms-dev {
+  background-color: #f7f5eb;
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.3rem 0.7rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+.container-forms-dev form {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-direction: column;
+}
+.container-forms-dev form input {
+  height: 2rem;
+  outline: none;
+  border: 0.1rem solid #5e2208;
+  width: 18rem;
+  padding: 0 0.2rem;
+  border-radius: 0.3rem;
+}
+.container-forms-dev form textarea {
+  outline: none;
+  border: 0.1rem solid #5e2208;
+  width: 18rem;
+  padding: 0 0.2rem;
+  border-radius: 0.3rem;
+}
+.container-forms-dev form input::placeholder,
+textarea::placeholder {
+  color: #5e2208;
+}
+.container-forms-dev form input[type="submit"] {
+  background-color: #5e2208;
+  color: #f7f5eb;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+.container-forms-dev form input[type="submit"]:hover {
+  background-color: #461b0b;
+}
+/* navbar */
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #5e2208;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-link:hover::before,
+  .nav-link.home:hover::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+@media (max-width: 750px) {
+  .main-contatos {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .nav {
+    flex-direction: column;
+  }
+  .container-dev .image-dev{
+    width: 16rem;
+  }
+  .container-dev span{
+    font-size: 1.3rem;
+  }
+  .container-forms-dev{
+    width: 20rem;
+  }
+  .container-forms-dev form input, .container-forms-dev form textarea{
+    width: 15rem;
+  }
+}
