@@ -4,7 +4,7 @@ require_once "src/conexao.php";
 session_start();
 
 if(!isset($_SESSION['Usuario'])){
-    header('Location: pages/cadastro.php');
+    header('Location: pages/login.php');
     exit;
 }
 ?>

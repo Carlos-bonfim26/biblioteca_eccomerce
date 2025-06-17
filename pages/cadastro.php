@@ -19,14 +19,14 @@
             <p>Já tem uma conta? <a href="login.php">entre por aqui</a></p>
 
             <form action="../src/cadastroBack.php" method="post">
-                <input name="name" id="name" placeholder="Nome Completo:" type="text">
-                <input name="email" id="email" placeholder="Email:" type="email">
-                <input name="telefone" id="telefone" placeholder="Telefone:" type="tel">
+                <input name="name" id="name" placeholder="Nome:" type="text" required>
+                <input name="email" id="email" placeholder="Email:" type="email" required>
+                <input name="telefone" id="telefone" placeholder="Telefone:" type="tel" required>
                 <div class="form-house">
-                    <input name="cep" id="cep" placeholder="Cep:" type="text">
-                    <input name="nCasa" id="nCasa" placeholder="Número Casa" type="text">
+                    <input name="cep" id="cep" placeholder="Cep:" type="text" required>
+                    <input name="nCasa" id="nCasa" placeholder="Número Casa" type="text" required>
                 </div>
-                <input name="password" id="password" placeholder="Senha" type="password">
+                <input name="password" id="password" placeholder="Senha" type="password" required>
                 
                 <input type="submit" value="Cadastrar">
             </form>

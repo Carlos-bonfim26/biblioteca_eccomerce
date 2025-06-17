@@ -28,16 +28,16 @@
                             <a class="nav-link " aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Livros</a>
+                            <a class="nav-link" href="../index.php">Livros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Carrinho</a>
+                            <a class="nav-link" href="carrinho.php">Carrinho</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Perfil</a>
+                            <a class="nav-link" href="perfil.php">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active">Fale Conosco</a>
+                            <a class="nav-link active" href="contato.php">Fale Conosco</a>
                         </li>
                     </ul>
 

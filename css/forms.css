@@ -95,6 +95,12 @@
   font-size: 1rem;
   font-weight: 600;
 }
+#linkADM{
+  margin-top: 0.5rem;
+  font-size: 0.6rem;
+  color: #f7f3e3;
+  font-weight: 300;
+}
 @media (max-width: 800px) {
   .container-form h1 {
     font-size: 2rem;

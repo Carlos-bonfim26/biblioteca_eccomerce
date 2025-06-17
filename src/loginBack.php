@@ -21,7 +21,7 @@ if(mysqli_num_rows($login) > 0){
         session_start();
         $_SESSION['Usuario'] = $row['Name_Client'];
         $_SESSION['Email_Usuario'] = $row['Email_Client'];
-
+        $_SESSION['ID_USER'] = $row['Id_client'];
         header("Location: ../index.php");
     }else{
         header("Location: ../pages/login.php?error2");

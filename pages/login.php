@@ -24,6 +24,7 @@
                 
                 <input type="submit" value="Entrar">
 
+                <a href="../admin/loginAdm.php" id="linkADM">administrador entre por aqui </a>
                 <?php 
                 
                 if(isset($_GET['error1'])){

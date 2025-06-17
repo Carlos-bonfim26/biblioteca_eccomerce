@@ -121,6 +121,74 @@ textarea::placeholder {
 .container-forms-dev form input[type="submit"]:hover {
   background-color: #461b0b;
 }
+/* perfil */
+.header-perfil {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0.5rem;
+  align-items: center;
+}
+.header-perfil h1 {
+  color: #461b0b;
+}
+.header-perfil a {
+  background-color: #ff9505;
+  width: 4rem;
+  color: #f7f5eb;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  height: 2rem;
+}
+.container-perfil {
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  min-height: 80vh;
+  border-bottom-right-radius: 50%;
+}
+.container-perfil h1 {
+  color: #461b0b;
+}
+.container-form form {
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 1rem;
+  flex-direction: column;
+}
+.container-perfil .container-form input {
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 0.2rem solid #461b0b;
+}
+.container-perfil .container-form input[type="submit"] {
+  background-color: #461b0b;
+  color: #f7f5eb;
+  font-weight: 500;
+  border-radius: 0.4rem;
+}
+.image-form {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+.image-form img {
+  width: 25rem;
+}
 /* navbar */
 @media (min-width: 991px) {
   .nav-link::before {
@@ -150,19 +218,78 @@ textarea::placeholder {
 }
 
 @media (max-width: 460px) {
+  .header-perfil {
+    flex-direction: column;
+  }
   .nav {
     flex-direction: column;
   }
-  .container-dev .image-dev{
+  .container-dev .image-dev {
     width: 16rem;
   }
-  .container-dev span{
+  .container-dev span {
     font-size: 1.3rem;
   }
-  .container-forms-dev{
+  .container-forms-dev {
     width: 20rem;
   }
-  .container-forms-dev form input, .container-forms-dev form textarea{
+  .container-forms-dev form input,
+  .container-forms-dev form textarea {
     width: 15rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-perfil h1 {
+    font-size: 2rem;
+  }
+  .container-form p {
+    font-size: 1rem;
+  }
+  .container-form form input {
+    height: 2rem;
+    width: 16rem;
+  }
+  .form-house #cep {
+    width: 9.5rem;
+  }
+  .form-house #nCasa {
+    width: 6rem;
+  }
+  .image-form img {
+    width: 20rem;
+  }
+}
+@media (max-width: 680px) {
+  .header-perfil h1 {
+    font-size: 1.4rem;
+  }
+  .container-perfil {
+    flex-direction: column-reverse;
+  }
+
+  .container-form {
+    width: 100%;
+    min-height: 75vh;
+    padding: 1.5rem 0.5rem;
+    justify-content: start;
+  }
+  .container-form form {
+    justify-content: start;
+  }
+  .image-form {
+    min-height: 25vh;
+  }
+  .image-form img {
+    width: 16rem;
+  }
+}
+@media (max-width: 400px) {
+  .container-form {
+    min-height: 65vh;
+    justify-content: center;
+  }
+  .image-form {
+    min-height: 35vh;
   }
 }
