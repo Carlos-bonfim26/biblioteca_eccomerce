@@ -88,7 +88,9 @@ th {
 .container-form form h2 {
   margin-bottom: 1rem;
 }
-
+.container-form form img{
+  width: 8rem;
+}
 .container-form form input[type="file"]{
     border: none;
 }
