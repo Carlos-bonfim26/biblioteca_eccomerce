@@ -1,0 +1,82 @@
+/* gerais */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #461b0b;
+}
+/* navbar */
+.container-fluid .navbar-brand img {
+  width: 15rem;
+}
+.nav-link {
+  color: #f7f3e3;
+  position: relative;
+  transition: 0.1s ease-in-out;
+}
+.nav-link:focus {
+  color: #f7f3e3;
+  font-weight: 600;
+}
+.nav-item:hover .nav-link {
+  color: #f7f3e3;
+  font-weight: 500;
+}
+.nav-link.active {
+  font-weight: 500;
+}
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+/* navbar */
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #f7f3e3;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-link:hover::before,
+  .nav-link.home:hover::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+.home {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  color: #f7f3e3;
+}
+.home h2 {
+  margin-top: -4rem;
+  margin-right: 10rem;
+
+  font-weight: 300;
+}
+.home img {
+  width: 40rem;
+}
+.shape {
+    padding: 1rem;
+  width: 70%;
+  min-height: 70vh;
+  background-color: #5e2208;
+  border-bottom-right-radius: 50%;
+}

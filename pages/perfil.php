@@ -37,7 +37,7 @@ $cliente = $result->fetch_assoc();
 
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">Home</a>
+                            <a class="nav-link " aria-current="page" href="../index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../index.php">Livros</a>
