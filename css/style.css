@@ -193,12 +193,14 @@ textarea::placeholder {
 
 #produtos {
   padding: 0.5rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   gap: 0.5rem;
-  flex-direction: column;
-  width: 60%;
+  
+  width: 70%;
 }
 #produtos .card-Produtos {
+  padding: 0.3rem;
   margin-bottom: 0.8rem;
   display: flex;
   gap: 0.5rem;
@@ -265,7 +267,7 @@ background-color: darkred;
 #pagamento{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 30%;
   padding: 0.3rem;
 }
 #pagamento h2{
