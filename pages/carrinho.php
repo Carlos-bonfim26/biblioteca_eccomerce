@@ -1,3 +1,13 @@
+<?php
+
+include_once('../src/conexao.php');
+
+$carrinho = isset($_COOKIE['carrinho']) ? json_decode($_COOKIE['carrinho'], true) : [];
+
+$total = 0;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,12 +16,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
-     <link rel="stylesheet" href="/css/style.css">
-     <link rel="shortcut icon" href="/img/logoIcon.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logoIcon.png" type="image/x-icon">
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="logo da compiloteca"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php#storebooks">Livros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="carrinho.php">Carrinho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil.php">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contato.php">Fale Conosco</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-carrinho">
+        <section id="produtos">
+            <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
+            <?php
+            if (empty($carrinho)) {
+                echo "<h3>Carrinho vazio </h3>";
+            } else {
+                foreach ($carrinho as $id => $qtd) {
+                    $sql = "SELECT * FROM books WHERE Id_Book = $id";
+                    $result = $conexao->query($sql);
+                    if ($row = $result->fetch_assoc()) {
+                        $preco = $row['Value_Book'];
+                        $subtotal = $preco * $qtd;
+                        $total += $subtotal;
+            ?>
+                        <div class="card-Produtos">
+                            <img src="../admin/uploads/<?=$row['image_book']?>" alt="">
+                            <div class="info-produtos">
+                                <h3><?=$row['Tittle_book']?></h3>
+                                <p><?=$row['Author_book']?></p>
+                                 <p>Quantidade: <?=$qtd?></p>
+                                <p class="preco">Total: R$ <?= $subtotal?></p>
+                                <div class="btn-produtos"><button><a href="#">Comprar</a></button>
+                                    <button class="apagar"><a href="../src/remover.php"><i class="fa-solid fa-trash-can"></i></a> </button>
+                                </div>
+                            </div>
+                        </div>
+            <?php
+                    }
+                }
+            }
+            ?>
+        </section>
+        <section id="pagamento">
+            <h2>Total: <?=$total?></h2>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
 </html>

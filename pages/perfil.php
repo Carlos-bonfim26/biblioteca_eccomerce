@@ -40,7 +40,7 @@ $cliente = $result->fetch_assoc();
                             <a class="nav-link " aria-current="page" href="../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Livros</a>
+                            <a class="nav-link" href="../index.php#storebooks">Livros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="carrinho.php">Carrinho</a>
