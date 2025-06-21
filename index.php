@@ -42,7 +42,7 @@ $result = $conexao->query($sql);
                                 <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php">Livros</a>
+                                <a class="nav-link" href="#storebooks">Livros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/carrinho.php">Carrinho</a>
@@ -64,7 +64,7 @@ $result = $conexao->query($sql);
 
         </section>
     </div>
-    <section class="storebooks">
+    <section id="storebooks">
         <h2>Livros Disponíveis</h2>
         <div class="shelve">
             <?php
@@ -79,7 +79,7 @@ $result = $conexao->query($sql);
                     <h3><?= $row['Tittle_book']?></h3>
                     <span>R$ <?php echo number_format($row['Value_Book'], 2, ',', '.');?></span>
 
-                    <button>Add carrinho </button>
+                    <button><a href="src/adicionar.php?id=<?=$row['Id_Book']?>">Add carrinho</a> </button>
                 </div>
             </div>
             <?php
