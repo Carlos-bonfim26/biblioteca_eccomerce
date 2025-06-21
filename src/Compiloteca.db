@@ -7,6 +7,7 @@ Id_Book int auto_increment primary key,
 Tittle_book varchar(100),
 Author_book varchar(100),
 Value_Book decimal(10,2),
+image_book varchar(100),
 Unit_book int
 );
 
