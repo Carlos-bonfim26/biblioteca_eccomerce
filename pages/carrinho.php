@@ -78,7 +78,7 @@ $total = 0;
                                  <p>Quantidade: <?=$qtd?></p>
                                 <p class="preco">Total: R$ <?= $subtotal?></p>
                                 <div class="btn-produtos"><button><a href="#">Comprar</a></button>
-                                    <button class="apagar"><a href="../src/remover.php"><i class="fa-solid fa-trash-can"></i></a> </button>
+                                    <button class="apagar"><a href="../src/remover.php?id=<?=$id?>"><i class="fa-solid fa-trash-can"></i></a> </button>
                                 </div>
                             </div>
                         </div>
