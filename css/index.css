@@ -128,7 +128,14 @@ body {
   grid-template-columns: repeat(4,1fr);
   gap: 0.5rem;
 }
-
+footer{
+  background-color: #461b0b;
+  color: #f7f3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
 @media (max-width:1400px){
   .shelve{
     grid-template-columns: repeat(3,1fr);
