@@ -58,38 +58,40 @@ $total = 0;
     <main class="container-carrinho">
         <section id="produtos">
             <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
-            <?php
-            if (empty($carrinho)) {
-                echo "<h3>Carrinho vazio </h3>";
-            } else {
-                foreach ($carrinho as $id => $qtd) {
-                    $sql = "SELECT * FROM books WHERE Id_Book = $id";
-                    $result = $conexao->query($sql);
-                    if ($row = $result->fetch_assoc()) {
-                        $preco = $row['Value_Book'];
-                        $subtotal = $preco * $qtd;
-                        $total += $subtotal;
-            ?>
-                        <div class="card-Produtos">
-                            <img src="../admin/uploads/<?=$row['image_book']?>" alt="">
-                            <div class="info-produtos">
-                                <h3><?=$row['Tittle_book']?></h3>
-                                <p><?=$row['Author_book']?></p>
-                                 <p>Quantidade: <?=$qtd?></p>
-                                <p class="preco">Total: R$ <?= $subtotal?></p>
-                                <div class="btn-produtos"><button><a href="#">Comprar</a></button>
-                                    <button class="apagar"><a href="../src/remover.php?id=<?=$id?>"><i class="fa-solid fa-trash-can"></i></a> </button>
+            <div class="lista-compras">
+                <?php
+                if (empty($carrinho)) {
+                    echo "<h3>Carrinho vazio </h3>";
+                } else {
+                    foreach ($carrinho as $id => $qtd) {
+                        $sql = "SELECT * FROM books WHERE Id_Book = $id";
+                        $result = $conexao->query($sql);
+                        if ($row = $result->fetch_assoc()) {
+                            $preco = $row['Value_Book'];
+                            $subtotal = $preco * $qtd;
+                            $total += $subtotal;
+                ?>
+                            <div class="card-Produtos">
+                                <img src="../admin/uploads/<?=$row['image_book']?>" alt="">
+                                <div class="info-produtos">
+                                    <h3><?=$row['Tittle_book']?></h3>
+                                    <p><?=$row['Author_book']?></p>
+                                     <p>Quantidade: <?=$qtd?></p>
+                                    <p class="preco">Total: R$ <?= $subtotal?></p>
+                                    <div class="btn-produtos"><button><a href="#">Comprar</a></button>
+                                        <button class="apagar"><a href="../src/remover.php?id=<?=$id?>"><i class="fa-solid fa-trash-can"></i></a> </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-            <?php
+                <?php
+                        }
                     }
                 }
-            }
-            ?>
+                ?>
+            </div>
         </section>
         <section id="pagamento">
-            <h2>Total: <?=$total?></h2>
+            <h2>Total: R$<?=$total?></h2>
         </section>
     </main>
 

@@ -193,11 +193,14 @@ textarea::placeholder {
 
 #produtos {
   padding: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  width: 70%;
+}
+.lista-compras{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 0.5rem;
-  
-  width: 70%;
 }
 #produtos .card-Produtos {
   padding: 0.3rem;
@@ -206,8 +209,8 @@ textarea::placeholder {
   gap: 0.5rem;
   justify-content: space-around;
   align-items: center;
-  width: 25rem;
-  height: 14rem;
+  width: 26rem;
+  height: 15rem;
   background-color: #f7f3e3;
   border-radius: 0.5rem;
   box-shadow: 0.8rem 0.8rem 0.6rem rgba(0, 0, 0, 0.1);
