@@ -25,8 +25,9 @@
                 <input type="submit" value="Entrar">
 
                 <?php 
-                
+                    # mostra o erro no login
                 if(isset($_GET['error1'])){
+                
                     echo "<span>Usuário ou Senha incorretos!</span>";
                 }else if(isset($_GET['error2'])){
                     echo "<span>Senha incorreta!</span>";

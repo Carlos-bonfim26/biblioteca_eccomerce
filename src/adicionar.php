@@ -13,6 +13,7 @@ if($id){
     }else{
         $carrinho[$id] = 1;
     }
+    # cria o cookie de carrinho, assim mantendo o produto salvo no carrinho por  7 dias
     setcookie('carrinho', json_encode($carrinho), time() + (86400 * 7), '/');
 }
 

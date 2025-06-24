@@ -1,6 +1,6 @@
 <?php
 require_once('../src/conexao.php');
-
+# erros carro dê errado o envio 
 $array_erros = array(
     UPLOAD_ERR_OK => 'Upload realizado com sucesso',
     UPLOAD_ERR_INI_SIZE => 'O arquivo enviado excede o tamanho máximo permitido pelo servidor',
@@ -31,11 +31,13 @@ if (isset($_POST['adicionar'])) {
 
         $pasta = 'uploads/';
         $tipo = $_FILES['imagem']['type'];
-
+        #pega a extensão do arquivo, tipo png, jpg etc
         $extensao = strrchr($arquivo, '.');
-
+        # verifica se a o tipo do arquivo é uma imagem;
         if ($tipo == 'image/jpg' || $tipo == 'image/jpeg' || $tipo == 'image/webp' || $tipo == 'image/png') {
+            # move o arquivo para pasta de uploads
             move_uploaded_file($pasta_temporaria, $pasta . $arquivo);
+            # vê se o arquivo já está na enviado para poder inserir na página
             if (file_exists($pasta . $arquivo)) {
                 echo 'arquivo enviado com sucesso';
                 $sql = "INSERT INTO books(Tittle_book, Author_book, Value_Book, Unit_book, image_book) VALUES ('$titulo','$autor', '$valor', '$unidade', '$arquivo' )";
@@ -43,11 +45,11 @@ if (isset($_POST['adicionar'])) {
 
                 header('Location: ../admin/livros.php');
             } else {
-                
+
                 header('Location: ../admin/formulario-criar.php?error2');
             }
         } else {
-             
+
             header('Location: ../admin/formulario-criar.php?error1');
         }
     } else {

@@ -27,6 +27,7 @@
                 <a href="../admin/loginAdm.php" id="linkADM">administrador entre por aqui </a>
                 <?php 
                 
+                # mostra o erro no login
                 if(isset($_GET['error1'])){
                     echo "<span>Usuário ou Senha incorretos!</span>";
                 }else if(isset($_GET['error2'])){

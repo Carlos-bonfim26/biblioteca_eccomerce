@@ -28,8 +28,10 @@
                 <input required name="imagem" type="file" accept=".jpg, .png, .webp, .jpeg">
 
                 <input value="Adicionar" type="submit" name="adicionar">
+                
 
                 <?php
+                # mostra o erro no login
                 if (isset($_GET['error1'])) {
                     echo "<span>Erro: tipo de arquivo não é permitido!</span>";
                 } else if (isset($_GET['error2'])) {

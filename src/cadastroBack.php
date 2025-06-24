@@ -8,7 +8,7 @@ $telefone = $_POST['telefone'];
 $cep = $_POST['cep'];
 $casa = $_POST['nCasa'];
 $senha = $_POST['password'];
-
+#criptografia da senha para mais segurança
 $salt = md5($senha . $email);
 $custo = "06";
 $senhaCripto = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");

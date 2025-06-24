@@ -2,7 +2,6 @@
 
 ## 💻tecnologias usadas
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -30,5 +29,7 @@ git clone https://github.com/seu-usuario/biblioteca_eccomerce.git
 Eu utilizei o VsCode como IDE e o PhpMyAdmin para gerenciar o banco de dados, mas se preferir pode utilizar outros, mas para deixar o servidor PHP e MySQL ativo na sua máquina você irá precisar da ferramenta XAMPP e quando for utlizar o projeto ligar o MySQl e o Apache lá no Xampp.
 
 A estrutura do Banco de Dados está anotada no arquivo Compiloteca.db na pasta database, mas caso você queira usar os que já estou usando precisa apenas importar o arquivo system_library.sql que está na mesma pasta, com atenção ao admin do projeto que você terá que adicionar manualmente já que por segurança eu não deixei esse dado dentro desse arquivo.
+
+Lembre-se de trocar as informações do banco como a senha e usuário caso as suas sejam diferentes no arquivo conexao.php na pasta src.
 
 Caso tenha dúvidas de como funciona algum trecho você pode olhar os comentários nos arquivos ou tirar dúvida comigo, podendo me chamar pelo email: Carlosbonfim722@gmail.com ou me no meu Linkedin: https://www.linkedin.com/in/carlosbonfim26/ 

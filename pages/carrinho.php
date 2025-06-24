@@ -60,12 +60,15 @@ $total = 0;
             <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
             <div class="lista-compras">
                 <?php
+                # verifica se tem algo no carrinho
                 if (empty($carrinho)) {
                     echo "<h3>Carrinho vazio </h3>";
                 } else {
+                    # com o foreach pega tudo que está dentro do array
                     foreach ($carrinho as $id => $qtd) {
                         $sql = "SELECT * FROM books WHERE Id_Book = $id";
                         $result = $conexao->query($sql);
+                        
                         if ($row = $result->fetch_assoc()) {
                             $preco = $row['Value_Book'];
                             $subtotal = $preco * $qtd;
