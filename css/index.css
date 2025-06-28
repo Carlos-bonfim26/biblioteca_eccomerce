@@ -80,6 +80,10 @@ body {
   height: 100vh;
 }
 #storebooks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0.8rem;
 }
 #storebooks h2{
@@ -127,9 +131,36 @@ body {
   width: 6.5rem;
 }
 .shelve{
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 0.5rem;
+}
+.search-book{
+  width: 18rem;
+  height: 2rem;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 2rem;
+}
+.search-book input{
+  padding: 0 0.2rem;
+  width: 85%;
+  outline: none;
+  border-radius:  0.5rem 0 0  0.5rem  ;
+  border: 0.1rem solid black;
+  border-right: none;
+}
+.search-book button{
+  width: 15%;
+  border-radius: 0 0.5rem 0.5rem 0 ;
+  border: none;
+  background-color: #461b0b;
+  color: #ff9505;
+  transition: 0.3s ease-in;
+}
+.search-book button:hover{
+  background-color: #5e2208;
 }
 footer{
   background-color: #461b0b;

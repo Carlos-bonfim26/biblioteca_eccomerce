@@ -23,7 +23,7 @@ $result = $conexao->query($sql);
     <title>Compiloteca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="img/logoIcon.png" type="image/x-icon">
 </head>
 
@@ -66,6 +66,10 @@ $result = $conexao->query($sql);
     </div>
     <section id="storebooks">
         <h2>Livros Disponíveis</h2>
+        <div class="search-book">
+            <input type="search" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
+         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
         <div class="shelve">
             <?php
 

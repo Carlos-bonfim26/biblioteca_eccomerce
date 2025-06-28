@@ -103,7 +103,7 @@ $total = 0;
                     <?php
                     # verifica se tem algo no carrinho
                     if (empty($carrinho)) {
-                        echo "<h3>Carrinho vazio </h3>";
+                        echo "<li>Nenhum produto aqui </li>";
                     } else {
                         # com o foreach pega tudo que está dentro do array
                         foreach ($carrinho as $id => $qtd) {
