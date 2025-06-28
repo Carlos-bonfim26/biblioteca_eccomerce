@@ -63,15 +63,24 @@
         </div>
         <div class="container-forms-dev">
 
-            <form action="">
+            <form action="../src/email-outlook.php" method="post">
                 <h3>Entre em Contato</h3>
 
                 <input type="text" name="Nome" placeholder="Nome:">
-                <input type="email" placeholder="Email:">
+                <input type="email" placeholder="Email:" name="email">
 
                 <textarea name="mensagem" placeholder="Sua mensagem:" rows="7"></textarea>
                 <input type="submit" value="Enviar">
             </form>
+            <?php
+            if (isset($_GET['emailEnviado'])) {
+                if ($_GET['emailEnviado'] == 1) {
+                    echo "<p>Email enviado com sucesso!</p>";
+                } else {
+                    echo "<p>Erro ao enviar email!</p>";
+                }
+            }
+            ?>
         </div>
     </main>
 
