@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/06/2025 às 02:40
+-- Tempo de geração: 30/06/2025 às 01:26
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,6 +33,7 @@ CREATE TABLE `admin` (
   `Password_admin` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
 
 -- --------------------------------------------------------
 
@@ -95,13 +96,27 @@ INSERT INTO `clients` (`Id_client`, `Name_Client`, `Email_Client`, `Phone_client
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `item_order`
+--
+
+CREATE TABLE `item_order` (
+  `Id_Item` int(11) NOT NULL,
+  `SaleID` int(11) DEFAULT NULL,
+  `BookID` int(11) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Value_sale` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `sale`
 --
 
 CREATE TABLE `sale` (
   `Id_Sale` int(11) NOT NULL,
-  `Value_sale` decimal(10,2) DEFAULT NULL,
-  `BookID` int(11) DEFAULT NULL,
+  `statusPayment` tinyint(1) DEFAULT NULL,
+  `Date_Sale` datetime DEFAULT NULL,
   `ClientID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -131,11 +146,18 @@ ALTER TABLE `clients`
   ADD UNIQUE KEY `Phone_client` (`Phone_client`);
 
 --
+-- Índices de tabela `item_order`
+--
+ALTER TABLE `item_order`
+  ADD PRIMARY KEY (`Id_Item`),
+  ADD KEY `SaleID` (`SaleID`),
+  ADD KEY `BookID` (`BookID`);
+
+--
 -- Índices de tabela `sale`
 --
 ALTER TABLE `sale`
   ADD PRIMARY KEY (`Id_Sale`),
-  ADD KEY `BookID` (`BookID`),
   ADD KEY `ClientID` (`ClientID`);
 
 --
@@ -161,6 +183,12 @@ ALTER TABLE `clients`
   MODIFY `Id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de tabela `item_order`
+--
+ALTER TABLE `item_order`
+  MODIFY `Id_Item` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `sale`
 --
 ALTER TABLE `sale`
@@ -171,11 +199,17 @@ ALTER TABLE `sale`
 --
 
 --
+-- Restrições para tabelas `item_order`
+--
+ALTER TABLE `item_order`
+  ADD CONSTRAINT `item_order_ibfk_1` FOREIGN KEY (`SaleID`) REFERENCES `sale` (`Id_Sale`),
+  ADD CONSTRAINT `item_order_ibfk_2` FOREIGN KEY (`BookID`) REFERENCES `books` (`Id_Book`);
+
+--
 -- Restrições para tabelas `sale`
 --
 ALTER TABLE `sale`
-  ADD CONSTRAINT `sale_ibfk_1` FOREIGN KEY (`BookID`) REFERENCES `books` (`Id_Book`),
-  ADD CONSTRAINT `sale_ibfk_2` FOREIGN KEY (`ClientID`) REFERENCES `clients` (`Id_client`);
+  ADD CONSTRAINT `sale_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `clients` (`Id_client`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

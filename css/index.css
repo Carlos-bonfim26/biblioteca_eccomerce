@@ -115,12 +115,11 @@ body {
   border: none;
   border-radius: 0.5rem;
   width: 10rem;
+    color: #ff9505;
+  text-decoration: none;
   height: 2rem;
 }
-.info-book button a{
-  color: #ff9505;
-  text-decoration: none;
-}
+
 .book h3{
   font-size: 1.3rem;
 }

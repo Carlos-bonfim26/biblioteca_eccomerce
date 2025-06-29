@@ -85,7 +85,7 @@ $total = 0;
                                     </div>
                                     <p class="preco">Total: R$ <?= $subtotal ?></p>
                                     <div class="btn-produtos"><button><a href="#">Comprar</a></button>
-                                        <button class="apagar"><a href="../src/remover.php?id=<?= $id ?>&trash=1"><i class="fa-solid fa-trash-can"></i></a> </button>
+                                        <a href="../src/remover.php?id=<?= $id ?>&trash=1"><button class="apagar"><i class="fa-solid fa-trash-can"></i></button></a> 
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ $total = 0;
                     ?>
                 </ul>
                 <h3>Total: R$ <?= $total ?></h3>
-                <button><a href="#">Comprar Produtos</a></button>
+                <a href="#"><button>Comprar Produtos</button></a>
             </div>
         </section>
     </main>

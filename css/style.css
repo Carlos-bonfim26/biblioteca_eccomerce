@@ -256,7 +256,7 @@ textarea::placeholder {
 #produtos .card-Produtos .info-produtos .apagar:hover {
   background-color: darkred;
 }
-#produtos .card-Produtos .info-produtos .apagar a,
+#produtos .card-Produtos .info-produtos .apagar ,
 #produtos .clean a {
   text-decoration: none;
   color: #f7f5eb;

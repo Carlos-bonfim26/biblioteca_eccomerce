@@ -23,15 +23,22 @@ Password_Client varchar(100)
 
 create table sale( 
 Id_Sale int auto_increment primary key,
-Value_sale decimal(10,2),
-BookID int,
+statusPayment boolean,
+Date_Sale DATETIME,
 ClientID int,
-foreign key(BookID) references books(Id_Book),
 foreign key(ClientID) references clients(Id_client)
 );
-
+create table item_order(
+    Id_Item int auto_increment primary key,
+    SaleID int,
+    BookID int,
+    Quantity int,
+    Value_sale decimal(10,2),
+    foreign key (SaleID) references sale(Id_Sale),
+    foreign key (BookID) references books(Id_Book)
+);
 create table admin(
     Id_Admin int auto_increment primary key,
     Email_Admin varchar(100) unique,
     Password_admin varchar(100)
-)
+);
