@@ -33,3 +33,7 @@ A estrutura do Banco de Dados está anotada no arquivo Compiloteca.db na pasta d
 Lembre-se de trocar as informações do banco como a senha e usuário caso as suas sejam diferentes no arquivo conexao.php na pasta src.
 
 Caso tenha dúvidas de como funciona algum trecho você pode olhar os comentários nos arquivos ou tirar dúvida comigo, podendo me chamar pelo email: Carlosbonfim722@gmail.com ou me no meu Linkedin: https://www.linkedin.com/in/carlosbonfim26/ 
+
+# 📩Envio de email
+
+Para o envio de email eu utilizar o PHPMailer, mas esse código não é meu, e sim pertence ao esse perfil do github [sendmail](https://github.com/sendmail).

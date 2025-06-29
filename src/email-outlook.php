@@ -1,6 +1,6 @@
 <?php
 
-// https://github.com/sendmail/sendmail
+// https:/gi/thub.com/sendmail/sendmail
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
