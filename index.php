@@ -68,7 +68,7 @@ $result = $conexao->query($sql);
         <h2>Livros Disponíveis</h2>
         <div class="search-book">
             <input type="search" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
-         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="shelve">
             <?php
@@ -77,15 +77,15 @@ $result = $conexao->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
             ?>
-            <div class="book">
-                <img src="admin/uploads/<?=$row['image_book']?>" alt="capa do livro <?=$row['Tittle_book']?>">
-                <div class="info-book">
-                    <h3><?= $row['Tittle_book']?></h3>
-                    <span>R$ <?php echo number_format($row['Value_Book'], 2, ',', '.');?></span>
+                    <div class="book">
+                        <img src="admin/uploads/<?= $row['image_book'] ?>" alt="capa do livro <?= $row['Tittle_book'] ?>">
+                        <div class="info-book">
+                            <h3><?= $row['Tittle_book'] ?></h3>
+                            <span>R$ <?php echo number_format($row['Value_Book'], 2, ',', '.'); ?></span>
 
-                    <a href="src/adicionar.php?id=<?=$row['Id_Book']?>"><button >Add carrinho</button></a> 
-                </div>
-            </div>
+                            <a href="src/adicionar.php?id=<?= $row['Id_Book'] ?>"><button>Add carrinho</button></a>
+                        </div>
+                    </div>
             <?php
                 }
             }
@@ -93,7 +93,9 @@ $result = $conexao->query($sql);
         </div>
     </section>
 
-    <footer><p>&copy; Os direitos autorais desse projeto pertencem a Carlos Oliveira Bonfim</p></footer>
+    <footer>
+        <p>&copy; Os direitos autorais desse projeto pertencem a Carlos Oliveira Bonfim</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 

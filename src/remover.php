@@ -2,7 +2,7 @@
 
 $id = $_GET['id'];
 $qtd = $_GET['qtd'];
-if ($id && isset($_COOKIE['carrinho'])) {
+if ($id || $_GET['trash'] && isset($_COOKIE['carrinho'])) {
     # descodifica o sjon e depois no unset dropa o produto do carrinho
     $carrinho = json_decode($_COOKIE['carrinho'], true);
     # se o usuário tiver apertado no botão de lixeira ele já remove logo o produto da página

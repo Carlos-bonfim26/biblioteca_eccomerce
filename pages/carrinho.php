@@ -56,6 +56,7 @@ $total = 0;
     </header>
     <main class="container-carrinho">
         <section id="produtos">
+
             <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
             <div class="lista-compras">
                 <?php
@@ -66,6 +67,7 @@ $total = 0;
                     # com o foreach pega tudo que está dentro do array
                     foreach ($carrinho as $id => $qtd) {
                         $sql = "SELECT * FROM books WHERE Id_Book = $id";
+
                         $result = $conexao->query($sql);
 
                         if ($row = $result->fetch_assoc()) {
@@ -80,12 +82,12 @@ $total = 0;
                                     <p><?= $row['Author_book'] ?></p>
                                     <div class="config-qtd">
                                         <p>Quantidade: <?= $qtd ?></p>
-                                       <a href="../src/adicionar.php?id=<?= $row['Id_Book'] ?>"> <button>+</button></a>
-                                       <a href="../src/remover.php?id=<?= $id ?>&qtd=<?=$qtd?>"> <button>-</button></a>
+                                        <a href="../src/adicionar.php?id=<?= $row['Id_Book'] ?>"> <button>+</button></a>
+                                        <a href="../src/remover.php?id=<?= $id ?>&qtd=<?= $qtd ?>"> <button>-</button></a>
                                     </div>
                                     <p class="preco">Total: R$ <?= $subtotal ?></p>
-                                    <div class="btn-produtos"><button><a href="#">Comprar</a></button>
-                                        <a href="../src/remover.php?id=<?= $id ?>&trash=1"><button class="apagar"><i class="fa-solid fa-trash-can"></i></button></a> 
+                                    <div class="btn-produtos"><button onclick="return confirm('Você confirma a compra do livro <?= $row['Tittle_book'] ?> por <?= $subtotal ?>')"><a href="../src/comprar.php?id=<?= $row['Id_Book'] ?>&quantidade=<?= $qtd ?>">Comprar</a></button>
+                                        <a href="../src/remover.php?id=<?= $id ?>&trash=1"><button class="apagar"><i class="fa-solid fa-trash-can"></i></button></a>
                                     </div>
                                 </div>
                             </div>
@@ -119,9 +121,10 @@ $total = 0;
                     ?>
                 </ul>
                 <h3>Total: R$ <?= $total ?></h3>
-                <a href="#"><button>Comprar Produtos</button></a>
+                <a href="../src/comprar.php"><button>Comprar Produtos</button></a>
             </div>
         </section>
+       
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

@@ -303,17 +303,12 @@ textarea::placeholder {
   border: none;
   background-color: #461b0b;
   transition: 0.3s ease-in;
-}
-#pagamento .card-produtos button a {
   color: #f7f5eb;
   font-weight: 500;
   text-decoration: none;
-  transition: 0.3s ease-in;
 }
 #pagamento .card-produtos button:hover {
   background-color: #5e2208;
-}
-#pagamento .card-produtos button:hover a {
   color: #ff9505;
 }
 /* navbar */
