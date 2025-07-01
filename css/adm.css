@@ -10,14 +10,28 @@ body {
   min-height: 100vh;
   background-color: #f7f3e3;
 }
-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container-fluid .navbar-brand img {
+  width: 15rem;
 }
-header img {
-  width: 18rem;
+.nav-link {
+  color: #5e2208;
+  position: relative;
+  transition: 0.1s ease-in-out;
+}
+.nav-link:focus {
+  color: #5e2208;
+  font-weight: 600;
+}
+.nav-item:hover .nav-link {
+  color: #5e2208;
+  font-weight: 500;
+}
+.nav-link.active {
+  font-weight: 500;
+}
+.navbar-toggler {
+  border: none;
+  outline: none;
 }
 main {
   padding: 0.6rem 1rem;
@@ -40,9 +54,13 @@ table {
   justify-content: center;
   align-self: center;
 }
-tr {
+.livros {
   display: grid;
   grid-template-columns: 2rem 8rem 10rem 12rem 6rem 6rem 14rem;
+}
+.vendas {
+  display: grid;
+  grid-template-columns: 2rem 20rem 10rem 7rem 7rem 10rem 10rem 8rem;
 }
 td,
 th {
@@ -118,4 +136,23 @@ th {
     text-decoration: none;
     color: #000;
     font-weight: 500;
+}
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #5e2208;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-link:hover::before,
+  .nav-link.home:hover::before {
+    width: 100%;
+    visibility: visible;
+  }
 }

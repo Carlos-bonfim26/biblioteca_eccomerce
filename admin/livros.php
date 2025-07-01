@@ -15,7 +15,29 @@ require_once('../src/conexao.php');
 
 <body>
     <header>
-        <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="logo da compiloteca"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="livros.php">Livros registrados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="vendas.php">Vendas feitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../src/logout.php">Sair</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="header-adm">
@@ -32,7 +54,8 @@ require_once('../src/conexao.php');
 
             ?>
                 <thead>
-                    <tr>
+                    <tr class="livros">
+
                         <th>ID</th>
                         <th>Imagem</th>
                         <th>Título</th>
@@ -46,7 +69,7 @@ require_once('../src/conexao.php');
                     <?php
 
                     while ($linha = $resultado->fetch_assoc()) {
-                        echo " <tr>
+                        echo " <tr class='livros'>
                     <td>" . $linha['Id_Book'] . "</td>
                       <td><img class='book_image' src='uploads/" . $linha['image_book'] . "'> </td>
                     <td>" . $linha['Tittle_book'] . "</td>

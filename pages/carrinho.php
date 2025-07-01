@@ -121,7 +121,7 @@ $total = 0;
                     ?>
                 </ul>
                 <h3>Total: R$ <?= $total ?></h3>
-                <a href="../src/comprar.php"><button>Comprar Produtos</button></a>
+                <a href="../src/comprar.php" onclick="return confirm('Você confirma a compra dos livros por <?= $total ?>')"><button>Comprar Produtos</button></a>
             </div>
         </section>
        

@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     $quantidade = $_GET['quantidade'];
 
     itemsVenda($idProduto, $idVenda, $quantidade, $conexao);
-    header("Location: ../pages/carrinho.php");
+    header("Location: remover.php?id=$idProduto&trash=1");
 } else {
     $carrinho = isset($_COOKIE['carrinho']) ? json_decode($_COOKIE['carrinho'], true) : [];
 
@@ -37,9 +37,11 @@ function itemsVenda($produtoID, $vendaID, $quantidade, $conexao)
     $resultadoProduto = $conexao->query($sqlProduto);
     $linhaProduto = $resultadoProduto->fetch_assoc();
     $valor = $linhaProduto['Value_Book'] * $quantidade;
+    $SETestoqueBooks = $linhaProduto['Unit_book'] - $quantidade;
 
     $sqlItens = "INSERT INTO item_order(SaleID, BookID, Quantity, Value_sale) VALUES ($vendaID, $produtoID, $quantidade, $valor)";
-
+    $sqlEstoque = "UPDATE books SET Unit_book =  $SETestoqueBooks WHERE Id_Book = $produtoID";
+    $conexao->query($sqlEstoque);
     return $result = $conexao->query($sqlItens);
 }
 function enviarEmail() {}
