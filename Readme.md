@@ -36,4 +36,4 @@ Caso tenha dúvidas de como funciona algum trecho você pode olhar os comentári
 
 # 📩Envio de email
 
-Para o envio de email eu utilizar o PHPMailer, mas esse código não é meu, e sim pertence ao esse perfil do github [sendmail](https://github.com/sendmail).
+Para o envio de email eu utilizar o PHPMailer, mas esse código não é meu, eu utilizei o código desse repositório no github: https://github.com/PHPMailer/PHPMailer/tree/master/src

@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     $quantidade = $_GET['quantidade'];
 
     itemsVenda($idProduto, $idVenda, $quantidade, $conexao);
-    header("Location: remover.php?id=$idProduto&trash=1");
+    header("Location: emailCompra.php?id=$idProduto");
 } else {
     $carrinho = isset($_COOKIE['carrinho']) ? json_decode($_COOKIE['carrinho'], true) : [];
 
@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
         itemsVenda($idProduto, $idVenda, $quantidade, $conexao);
     }
     setcookie('carrinho', '', time() - 3600, '/');
-    header("Location: ../pages/carrinho.php");
+    header("Location: emailCompra.php");
 }
 function efetuarVenda($userID, $data, $conexao)
 {

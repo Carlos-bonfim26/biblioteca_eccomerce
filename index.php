@@ -83,7 +83,7 @@ $result = $conexao->query($sql);
                             <h3><?= $row['Tittle_book'] ?></h3>
                             <span>R$ <?php echo number_format($row['Value_Book'], 2, ',', '.'); ?></span>
 
-                            <a href="src/adicionar.php?id=<?= $row['Id_Book'] ?>"><button>Add carrinho</button></a>
+                            <a href="src/adicionar.php?id=<?= $row['Id_Book'] ?>" onclick="return confirm('Você quer adicionar <?=$row['Tittle_book']?> no carrinho?')"><button>Add carrinho</button></a>
                         </div>
                     </div>
             <?php
