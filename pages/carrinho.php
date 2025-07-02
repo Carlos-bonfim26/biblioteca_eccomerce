@@ -58,7 +58,10 @@ $total = 0;
         <section id="produtos">
 
             <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
-               <?php if (isset($_GET['email'])) { ?>
+               <?php 
+               #avisa o usuário que o email confirmando a compra foi enviado
+               if (isset($_GET['email'])) { ?>
+
                 <div class="alert-email">
                     <p>Email enviado com sucesso <i class="fa-solid fa-circle-check"></i></p>
                 </div>

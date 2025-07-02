@@ -8,10 +8,11 @@ if (!isset($_SESSION['Usuario'])) {
     exit;
 }
 $pesquisa = $_GET['pesquisa'] ?? '';
-
+# verifica se tem algo na pesquisa
 if (!empty($pesquisa)) {
     // Evita SQL Injection usando prepare e bind_param
     $stmt = $conexao->prepare("SELECT * FROM books WHERE Tittle_book LIKE ?");
+    #usando o like faz a pesquisa do livro pelo titulo
     $like = "%" . $pesquisa . "%";
     $stmt->bind_param("s", $like);
     $stmt->execute();
@@ -76,6 +77,7 @@ if (!empty($pesquisa)) {
     </div>
     <section id="storebooks">
         <h2>Livros Disponíveis</h2>
+        
         <form class="search-book" action="index.php" method="GET">
             <input type="search" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>

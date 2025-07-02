@@ -36,4 +36,10 @@ Caso tenha dúvidas de como funciona algum trecho você pode olhar os comentári
 
 # 📩Envio de email
 
-Para o envio de email eu utilizar o PHPMailer, mas esse código não é meu, eu utilizei o código desse repositório no github: https://github.com/PHPMailer/PHPMailer/tree/master/src
+Para o envio de email eu utilizar o PHPMailer, mas esse código não é meu, eu utilizei o código desse repositório no github: https://github.com/PHPMailer/PHPMailer/tree/master/src 
+
+Nesse projeto por conta das rígidas regras de segurança da Google eu utilizei apenas o servidor @outlook ou @hotmail, mas você pode aprender mais sobre essa API olhando o repositório do PHPMailer
+
+# 🔍Observações
+
+O projeto foi feito em PHP e MySQL puro, pretendo continuar aprendendo mais tecnologias e linguagens de programação, por ser feito puramente em php ele se torna um pouco pesado e até lento, não é um dos projetos mais criativos mas eu espero que você leia e entenda um pouco da minha lógica e como eu fiz ele com o curso rolando e notável a evolução do código nos últimos commits e em determinadas partes do código, Obrigado pela visita!

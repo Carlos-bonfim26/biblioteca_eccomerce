@@ -49,6 +49,7 @@ require_once('../src/conexao.php');
         </div>
         <table>
             <?php
+            # seleciona os principais dados da venda do cliente
             $sql = "SELECT 
     s.Id_Sale AS ID_Venda,
     s.Date_Sale AS Data_Pedido,
