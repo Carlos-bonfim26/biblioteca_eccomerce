@@ -20,13 +20,13 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'carlos.obonfim@senacsp.edu.br';
-    $mail->Password   = 'ftm3h17##';
+    $mail->Username   = 'seuDominio@outlook.com';
+    $mail->Password   = 'suaSenha';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     // Remetente
-    $mail->setFrom('carlos.obonfim@senacsp.edu.br', 'Compiloteca');
+    $mail->setFrom('seuDominio@outlook.com', 'Compiloteca');
 
     // Destinatário
     $mail->addAddress($emailDoCliente, $nomeDoCliente); // Pegue esses dados da sua plataforma
@@ -39,7 +39,7 @@ try {
 
     $mail->send();
     if ($id != null) {
-        header("Location: remover.php?id=$id&trash=1&email=1");
+         header("Location: remover.php?id=$id&trash=1&email=1");
         exit;
     }
     header("location: ../pages/carrinho.php?email=1");

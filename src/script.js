@@ -1,4 +1,4 @@
-    // Aguarda 10 segundos e esconde o alerta
+   // Aguarda 10 segundos e esconde o alerta
     setTimeout(function () {
         const alerta = document.querySelector('.alert-email');
         if (alerta) {
