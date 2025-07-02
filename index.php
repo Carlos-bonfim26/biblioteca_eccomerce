@@ -7,9 +7,19 @@ if (!isset($_SESSION['Usuario'])) {
     header('Location: pages/login.php');
     exit;
 }
+$pesquisa = $_GET['pesquisa'] ?? '';
 
-$sql = "SELECT * FROM books";
-$result = $conexao->query($sql);
+if (!empty($pesquisa)) {
+    // Evita SQL Injection usando prepare e bind_param
+    $stmt = $conexao->prepare("SELECT * FROM books WHERE Tittle_book LIKE ?");
+    $like = "%" . $pesquisa . "%";
+    $stmt->bind_param("s", $like);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $sql = "SELECT * FROM books";
+    $result = $conexao->query($sql);
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,10 +76,10 @@ $result = $conexao->query($sql);
     </div>
     <section id="storebooks">
         <h2>Livros Disponíveis</h2>
-        <div class="search-book">
+        <form class="search-book" action="index.php" method="GET">
             <input type="search" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+        </form>
         <div class="shelve">
             <?php
 
@@ -83,7 +93,7 @@ $result = $conexao->query($sql);
                             <h3><?= $row['Tittle_book'] ?></h3>
                             <span>R$ <?php echo number_format($row['Value_Book'], 2, ',', '.'); ?></span>
 
-                            <a href="src/adicionar.php?id=<?= $row['Id_Book'] ?>" onclick="return confirm('Você quer adicionar <?=$row['Tittle_book']?> no carrinho?')"><button>Add carrinho</button></a>
+                            <a href="src/adicionar.php?id=<?= $row['Id_Book'] ?>" onclick="return confirm('Você quer adicionar <?= $row['Tittle_book'] ?> no carrinho?')"><button>Add carrinho</button></a>
                         </div>
                     </div>
             <?php
@@ -96,6 +106,7 @@ $result = $conexao->query($sql);
     <footer>
         <p>&copy; Os direitos autorais desse projeto pertencem a Carlos Oliveira Bonfim</p>
     </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
