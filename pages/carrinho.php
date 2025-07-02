@@ -58,6 +58,13 @@ $total = 0;
         <section id="produtos">
 
             <button class="clean"><a href="../src/limpar.php">Limpar <i class="fa-solid fa-broom"></i></a></button>
+            <?php if (isset($_GET['email'])) { ?>
+                <div class="alert-email">
+                    <p>Email enviado com sucesso <i class="fa-solid fa-circle-check"></i></p>
+                </div>
+            <?php
+            }
+            ?>
             <div class="lista-compras">
                 <?php
                 # verifica se tem algo no carrinho
@@ -124,9 +131,10 @@ $total = 0;
                 <a href="../src/comprar.php" onclick="return confirm('Você confirma a compra dos livros por <?= $total ?>')"><button>Comprar Produtos</button></a>
             </div>
         </section>
-       
+
     </main>
 
+    <script src="../src/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 

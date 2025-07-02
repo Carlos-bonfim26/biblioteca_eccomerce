@@ -9,7 +9,10 @@ if ($id || $_GET['trash'] && isset($_COOKIE['carrinho'])) {
     if (isset($_GET['trash'])) {
         unset($carrinho[$id]);
         setcookie('carrinho', json_encode($carrinho), time() + (86400 * 7), '/');
-
+        if (isset($_GET['email'])) {
+            header("location: ../pages/carrinho.php?email=1");
+            exit;
+        }
         header('location: ../pages/carrinho.php');
         exit;
     }
@@ -21,7 +24,7 @@ if ($id || $_GET['trash'] && isset($_COOKIE['carrinho'])) {
         if ($novaQtd > 0) {
             $carrinho[$id] = $novaQtd;
         } else {
-             # se tiver menos de um item no carrinho ele já remove o produto
+            # se tiver menos de um item no carrinho ele já remove o produto
             unset($carrinho[$id]);
         }
         # renova o cookie de carrinho 

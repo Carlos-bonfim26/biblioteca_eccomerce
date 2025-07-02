@@ -20,13 +20,13 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.office365.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'seuDominio@outlook.com';
-    $mail->Password   = 'suaSenha';
+    $mail->Username   = 'carlos.obonfim@senacsp.edu.br';
+    $mail->Password   = 'ftm3h17##';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     // Remetente
-    $mail->setFrom('seuDominio@outlook.com', 'Compiloteca');
+    $mail->setFrom('carlos.obonfim@senacsp.edu.br', 'Compiloteca');
 
     // Destinatário
     $mail->addAddress($emailDoCliente, $nomeDoCliente); // Pegue esses dados da sua plataforma
@@ -39,10 +39,10 @@ try {
 
     $mail->send();
     if ($id != null) {
-        header("Location: remover.php?id=$id&trash=1");
+        header("Location: remover.php?id=$id&trash=1&email=1");
         exit;
     }
-    header("location: ../pages/carrinho.php");
+    header("location: ../pages/carrinho.php?email=1");
 } catch (Exception $e) {
     echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
 }
