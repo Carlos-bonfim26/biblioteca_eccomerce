@@ -1,6 +1,10 @@
 <?php
 require_once("../src/conexao.php");
 session_start();
+if (!isset($_SESSION['Usuario'])) {
+    header('Location: pages/login.php');
+    exit;
+}
 $id = $_SESSION['ID_USER'];
 
 $sql = "SELECT * FROM clients WHERE Id_client = $id";
@@ -74,8 +78,7 @@ $cliente = $result->fetch_assoc();
                     <input required value="<?= $cliente['Cep_Client'] ?>" name="cep" id="cep" placeholder="Cep:" type="text">
                     <input required value="<?= $cliente['Home_Client'] ?>" name="nCasa" id="nCasa" placeholder="Número Casa" type="text">
                 </div>
-
-
+                  <a href="../src/emailSenha.php" id="passwordKey">Trocar senha <i class="fa-solid fa-key"></i></a>
                 <input type="submit" value="Salvar informações">
             </form>
         </div>

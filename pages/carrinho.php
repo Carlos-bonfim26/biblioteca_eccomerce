@@ -1,7 +1,12 @@
 <?php
 
 include_once('../src/conexao.php');
+session_start();
 
+if (!isset($_SESSION['Usuario'])) {
+    header('Location: pages/login.php');
+    exit;
+}
 $carrinho = isset($_COOKIE['carrinho']) ? json_decode($_COOKIE['carrinho'], true) : [];
 
 $total = 0;

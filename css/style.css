@@ -122,6 +122,15 @@ textarea::placeholder {
   background-color: #461b0b;
 }
 /* perfil */
+#passwordKey{
+  font-weight: 500;
+  color: #5e2208;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+#passwordKey:hover{
+  color: #ff9505;
+}
 .header-perfil {
   display: flex;
   justify-content: space-evenly;

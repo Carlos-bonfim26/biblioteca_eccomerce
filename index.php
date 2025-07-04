@@ -1,6 +1,6 @@
 <?php
 require_once "src/conexao.php";
-
+// evita que o usuário entre sem login
 session_start();
 
 if (!isset($_SESSION['Usuario'])) {
