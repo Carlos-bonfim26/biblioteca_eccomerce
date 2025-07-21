@@ -43,3 +43,17 @@ Nesse projeto por conta das rígidas regras de segurança da Google eu utilizei 
 # 🔍Observações
 
 O projeto foi feito em PHP e MySQL puro, pretendo continuar aprendendo mais tecnologias e linguagens de programação, por ser feito puramente em php ele se torna um pouco pesado e até lento, não é um dos projetos mais criativos mas eu espero que você leia e entenda um pouco da minha lógica e como eu fiz ele com o curso rolando e notável a evolução do código nos últimos commits e em determinadas partes do código, Obrigado pela visita!
+
+# Nossa interface
+Algumas das nossas telas, rode o meu código no seu pc e explore um pouco mais do meu trabalho
+## 🏠Home
+<img src="./.github/home.png" width="500">
+
+## 📚Livros em Estoque
+<img src="./.github/paginaLivros.png" width="500">
+
+## 🛒Carrinho
+<img src="./.github/carrinho.png" width="500">
+
+## 🧑‍🦰Página de cadastro
+<img src="./.github/cadastre-se.png" width="500">
